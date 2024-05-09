@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    background: #947344;
+    border-radius: 25px;
+}
+.container{
+    background: #030200;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5rem 90vh 60vh 100vh 100vh 100vh 100vh 100vh 100vh 100vh 20rem;
+    grid-template-areas: 
+    'header header'
+    'banner banner'
+    'text text'
+    'weareDifferent weareDifferent'
+    'coffee1 coffee1'
+    'coffee2 coffee2'
+    'coffee3 coffee3'
+    'coffee4 coffee4'
+    'owner1 owner2'
+    'owner3 owner4'
+    'footer footer'
+    ;
+}
+/* header */
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 150px;
+    align-items: center;
+    background: #08040138;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+}
+header a.logo{
+    color: #ffffff;
+    position: relative;
+    font-size: 35px;
+    font-weight: 600;
+}
+header nav{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+header nav a{
+    position: relative;
+    color: #ffffff;
+}
+header nav a:first-child{
+    color: #947344;
+}
+header nav a:first-child::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    border-radius: 25px;
+    background: #947344;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+header nav a:nth-child(1n+2)::after{
+    content: '';
+    width: 0;
+    height: 1px;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background: #ffffff;
+    transition: .5s;
+}
+header nav a:nth-child(1n+2):hover::after{
+    width: 100%;
+}
+header .icons{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+header .icons a i{
+    position: relative;
+    color: #ffffff;
+    font-size: 18px;
+}
+/* banner */
+.banner{
+    grid-area: banner;
+    background-image: url(images/content-img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.banner main article{
+    width: 35%;
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -30%);
+}
+.banner main article h1{
+    color: #ffffff;
+    font-size: 35px;
+}
+.banner main article h1 span{
+    color: #947344;
+}
+.banner main article p{
+    color: #ffffff;
+    font-size: 13px;
+}
+.scroll-animation{
+    border: 3px solid #ffffff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -90%);
+    animation: moving 2s infinite;
+}
+@keyframes moving{
+    70%{transform: translate(-50%, 0%);}
+    100%{transform:translate(-50%, -90%);}
+}
+.scroll-animation i{
+    color: #ffffff;
+}
+/* text */
+.text{
+    grid-area: text;
+    background-image:linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url(images/aboutUs.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.text main article{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+}
+.text main article h1{
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.text main article p{
+    color: #ffffff;
+}
+/* weareDifferent */
+.weareDifferent{
+    grid-area: weareDifferent;
+    padding: 20px;
+}
+.weareDifferent h1{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 500;
+}
+.weareDifferent .imgs{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.weareDifferent .imgs .pic1{
+    width: 35%;
+    height: 85%;
+    background-image: url(images/different1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 10rem;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+.weareDifferent .imgs .pic2{
+    width: 35%;
+    height: 85%;
+    background-image: url(images/different2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 10rem;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+.weareDifferent .imgs .pic1 .box{
+    width: 100%;
+    height: 30%;
+    background: #00000083;
+    position: relative;
+    top: 70%;
+    text-align: center;
+    padding: 10px;
+}
+.weareDifferent .imgs .pic1 .box p{
+    position: relative;
+    top: 20px;
+    color: #ffffff;
+}
+.weareDifferent .imgs .pic2 .box{
+    width: 100%;
+    height: 30%;
+    background: #00000083;
+    position: relative;
+    top: 70%;
+    text-align: center;
+    padding: 10px;
+}
+.weareDifferent .imgs .pic2 .box p{
+    position: relative;
+    top: 20px;
+    color: #ffffff;
+}
+/* menu */
+.boxes{
+    width: 50%;
+    height: 100%;
+    background: #00000079;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+.boxes h1{
+    color: #947344;
+    font-size: 45px;
+}
+.boxes h2{
+    color: #ffffff;
+}
+.boxes p{
+    width: 50%;
+    color: #ffffff;
+}
+.coffee1{
+    grid-area: coffee1;
+    background-image: url(images/mocha.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.coffee2{
+    grid-area: coffee2;
+    background-image: url(images/chocolate.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.coffee3{
+    grid-area: coffee3;
+    background-image: url(images/spanish-latte.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.coffee4{
+    grid-area: coffee4;
+    background-image: url(images/caramel-macchiato.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* owners */
+.owner1{
+    grid-area: owner1;
+    padding: 3rem;
+}
+.owner1 .own1pic{
+    width: 100%;
+    height: 100%;
+    background-image: url(logo&owners/ronann\ neww.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.owner1 .own1pic .box{
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    top: 65%;
+    background: #00000083;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.owner1 .own1pic .box h1{
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.owner1 .own1pic .box h2{
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.45rem;
+}
+.owner1 .own1pic .box button{
+    padding: 10px 25px;
+    color: #947344;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: .5s;
+}
+.owner1 .own1pic .box button:hover{
+    background: #947344;
+    border-radius: 25px;
+    color: #ffffff;
+}
+.owner2{
+    grid-area: owner2;
+    padding: 3rem;
+}
+.owner2 .own2pic{
+    width: 100%;
+    height: 100%;
+    background-image: url(logo&owners/ivy\ pic\ cov.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.owner2 .own2pic .box{
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    top: 65%;
+    background: #00000083;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.owner2 .own2pic .box h1{
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.owner2 .own2pic .box h2{
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.45rem;
+}
+.owner2 .own2pic .box button{
+    padding: 10px 25px;
+    color: #947344;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: .5s;
+}
+.owner2 .own2pic .box button:hover{
+    background: #947344;
+    border-radius: 25px;
+    color: #ffffff;
+}
+.owner3{
+    grid-area: owner3;
+    padding: 3rem;
+}
+.owner3 .own3pic{
+    width: 100%;
+    height: 100%;
+    background-image: url(logo&owners/rezeel\ mae.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.owner3 .own3pic .box{
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    top: 65%;
+    background: #00000083;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.owner3 .own3pic .box h1{
+    color: #ffffff;
+    font-weight: 500;
+}
+.owner3 .own3pic .box h2{
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.45rem;
+}
+.owner3 .own3pic .box button{
+    padding: 10px 25px;
+    color: #947344;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: .5s;
+}
+.owner3 .own3pic .box button:hover{
+    background: #947344;
+    border-radius: 25px;
+    color: #ffffff;
+}
+.owner4{
+    grid-area: owner4;
+    padding: 3rem;
+}
+.owner4 .own4pic{
+    width: 100%;
+    height: 100%;
+    background-image: url(logo&owners/FB_IMG_1712880770039\ \(2\).jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.owner4 .own4pic .box{
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    top: 65%;
+    background: #00000083;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.owner4 .own4pic .box h1{
+    color: #ffffff;
+    font-weight: 500;
+}
+.owner4 .own4pic .box h2{
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.45rem;
+}
+.owner4 .own4pic .box button{
+    padding: 10px 25px;
+    color: #947344;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: .5s;
+}
+.owner4 .own4pic .box button:hover{
+    background: #947344;
+    border-radius: 25px;
+    color: #ffffff;
+}
+/* footer */
+footer{
+    grid-area: footer;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(images/footer.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+footer .wrapper{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+footer .wrapper .logo-icons{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+footer .wrapper .logo-icons a.logo{
+    color: #ffffff;
+    position: relative;
+    font-size: 35px;
+    font-weight: 600;
+}
+footer .wrapper nav{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+footer .wrapper nav a{
+    color: #ffffff;
+    position: relative;
+}
+footer .wrapper .icons{
+    display: flex;
+    align-items: center;
+    gap: 2rem;   
+}
+footer .wrapper .icons a i{
+    color: #ffffff;
+    position: relative;
+    font-size: 30px;
+}
+footer .contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;   
+}
+footer .contacts h2{
+    color: #ffffff;
+    position: relative;
+}
+footer .contacts hr{
+    width: 20%;
+}
+footer .contacts p{
+    color: #ffffff;
+}
+footer .contacts .PEW{
+   margin-bottom: .20rem;
+}
+.copyright{
+    width: 100%;
+    height: 20%;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copyright p{
+    color: #ffffff79;
+}
